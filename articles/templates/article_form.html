@@ -1,9 +1,9 @@
 {% extends "base_layot.html" %}
 {% load static %}
-{% block title %} Create article {% endblock title %}
+{% block title %} Article Form {% endblock title %}
 {% block content %}
 <main>
-<h1>Create article</h1>
+<h1>Article Form</h1>
 <form class="form" action="{% url 'articles:create' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{form}}
