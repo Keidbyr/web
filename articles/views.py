@@ -46,7 +46,7 @@ def article_update(request, slug):
 @login_required(login_url='accounts:login')
 def article_delete(request, slug):
     article = Article.objects.get(slug=slug)
-    if request.user.id == article.user.id:
+    if request.user.id == article.author.id:
         if request.method == 'POST':
             article.delete()
             return redirect('homepage')
