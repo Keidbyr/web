@@ -26,7 +26,6 @@ def article_create(request):
             return redirect('homepage')
     else:
         form = forms.CreateArticle()
-    return render(request, 'article_form.html', {'form': form})
 
 
 @login_required(login_url='accounts:login')
@@ -38,9 +37,11 @@ def article_update(request, slug):
             instance = form.save(commit=False)
             instance.author = request.user
             instance.save()
+            return redirect('articles:article_detail', slug=article.slug)
         else:
             form = forms.CreateArticle(instance=article)
         return render(request, 'article_form.html', {'form': form})
+    return HttpResponse('401 Unauthorized', status=401)
 
 
 @login_required(login_url='accounts:login')

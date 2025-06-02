@@ -15,5 +15,5 @@ class CreateArticle(forms.ModelForm):
         widgets = {
             "title": forms.TextInput(attrs={'placeholder': 'Write article title', 'class': 'form-control mb-3'}),
             "body": forms.TextInput(attrs={'placeholder': 'Write article text', 'class': 'form-control mb-3'}),
-            "thumbnail": forms.ClearableFileInput(attrs={'class': 'form-control mb-3'}),
+            "thumbnail": forms.FileInput(attrs={'class': 'form-control mb-3'}),
         }
