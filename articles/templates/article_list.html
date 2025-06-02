@@ -20,7 +20,7 @@
         </div>
         {% endfor %}
         {% if user.is_authenticated %}
-        <div><a href="{% url 'articles:create'%}"><button type="submit"> create article</button></a></div>
+        <div><a href="{% url 'articles:create'%}"><button type="submit" class="create"> create article</button></a></div>
         {% else %}
         {% endif %}
     </div>
