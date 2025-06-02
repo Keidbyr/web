@@ -97,7 +97,7 @@ h1 {
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -240,17 +240,38 @@ body {
     margin: 0 auto 20px;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     main, .article-detail {
-        padding: 20px;
+        padding: 10px;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .container{
+        padding 0px;
+        justify-content: center;
     }
 
-    .article_item, .article-detail {
+    .articles {
+        padding: 0px;
+    }
+
+    .article_item {
+        width: 100%;
         padding: 20px;
     }
 
     .article-detail h1 {
         font-size: 1.8rem;
     }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 0px;
+    }
+    .logo{
+    display: none;
+    }
+}
 }
